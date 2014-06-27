@@ -12,3 +12,4 @@ for line in sys.stdin:
             pageparts = webpage.split()
             if len(pageparts) == 1 and pageparts[0].endswith(".php") and pageparts[0][0].isalpha():
                 print "{0}\t{1}".format(webpage, 1)
+
