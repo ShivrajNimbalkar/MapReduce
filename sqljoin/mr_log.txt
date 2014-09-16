@@ -1,0 +1,80 @@
+[shivraj@localhost sqljoin]$ sh run.sh
+14/09/16 11:27:46 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+14/09/16 11:27:57 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Copied data file to HDFS. Starting MapReduce...
+14/09/16 11:28:08 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
+14/09/16 11:28:09 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+packageJobJar: [code/mapper.py, code/reducer.py, /tmp/hadoop-shivraj/hadoop-unjar1934090033628279278/] [] /tmp/streamjob403809406066766429.jar tmpDir=null
+14/09/16 11:28:17 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+14/09/16 11:28:19 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+14/09/16 11:28:23 INFO mapred.FileInputFormat: Total input paths to process : 1
+14/09/16 11:28:23 INFO mapreduce.JobSubmitter: number of splits:2
+14/09/16 11:28:24 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1404160553712_0014
+14/09/16 11:28:26 INFO impl.YarnClientImpl: Submitted application application_1404160553712_0014
+14/09/16 11:28:26 INFO mapreduce.Job: The url to track the job: http://localhost:8088/proxy/application_1404160553712_0014/
+14/09/16 11:28:26 INFO mapreduce.Job: Running job: job_1404160553712_0014
+14/09/16 11:29:00 INFO mapreduce.Job: Job job_1404160553712_0014 running in uber mode : false
+14/09/16 11:29:00 INFO mapreduce.Job:  map 0% reduce 0%
+14/09/16 11:29:52 INFO mapreduce.Job:  map 100% reduce 0%
+14/09/16 11:30:16 INFO mapreduce.Job:  map 100% reduce 100%
+14/09/16 11:30:17 INFO mapreduce.Job: Job job_1404160553712_0014 completed successfully
+14/09/16 11:30:18 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=7051
+		FILE: Number of bytes written=302539
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=7703
+		HDFS: Number of bytes written=9407
+		HDFS: Number of read operations=9
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=2
+		Launched reduce tasks=1
+		Data-local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=96308
+		Total time spent by all reduces in occupied slots (ms)=20947
+		Total time spent by all map tasks (ms)=96308
+		Total time spent by all reduce tasks (ms)=20947
+		Total vcore-seconds taken by all map tasks=96308
+		Total vcore-seconds taken by all reduce tasks=20947
+		Total megabyte-seconds taken by all map tasks=98619392
+		Total megabyte-seconds taken by all reduce tasks=21449728
+	Map-Reduce Framework
+		Map input records=39
+		Map output records=13
+		Map output bytes=7001
+		Map output materialized bytes=7057
+		Input split bytes=194
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=8
+		Reduce shuffle bytes=7057
+		Reduce input records=13
+		Reduce output records=31
+		Spilled Records=26
+		Shuffled Maps =2
+		Failed Shuffles=0
+		Merged Map outputs=2
+		GC time elapsed (ms)=1510
+		CPU time spent (ms)=8600
+		Physical memory (bytes) snapshot=552828928
+		Virtual memory (bytes) snapshot=2522517504
+		Total committed heap usage (bytes)=378142720
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=7509
+	File Output Format Counters 
+		Bytes Written=9407
+14/09/16 11:30:18 INFO streaming.StreamJob: Output directory: tablejoinout
+[shivraj@localhost sqljoin]$ hadoop fs -get tablejoinout
+14/09/16 11:30:29 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[shivraj@localhost sqljoin]$ 
